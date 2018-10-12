@@ -1,0 +1,75 @@
+package com.sample;
+ 
+import com.sample.DroolsTest.Score;
+
+
+
+rule "A"
+    when
+        Score( score >= 90,score <= 100)
+    then
+        System.out.println("A");
+end
+
+rule "B+"
+    when
+        Score( score >= 87,score <= 89)
+    then
+        System.out.println("B+");
+end
+
+rule "B"
+    when
+        Score( getScore() >= 80,getScore() <= 86)
+    then
+        System.out.println("B");
+end
+
+rule "C+"
+    when
+        Score( getScore() >= 77,score <= 79)
+    then
+        System.out.println("C");
+end
+
+rule "C"
+    when
+        Score( score >= 70,score <= 76)
+    then
+        System.out.println("C");
+end
+
+rule "D+"
+    when
+        Score( score >= 67,score <= 69)
+    then
+        System.out.println("D+");
+end
+
+rule "D"
+    when
+        Score( score >= 60,score <= 66)
+    then
+        System.out.println("D");
+end
+
+rule "F"
+    when
+        Score( score >= 0,score <= 59)
+    then
+        System.out.println("F");
+end
+
+rule "error1"
+    when
+        Score( score < 0 )
+    then
+        System.out.println("DATA ERROR");
+end
+
+rule "error2"
+    when
+        Score( score >= 100 )
+    then
+        System.out.println("DATA ERROR");
+end
